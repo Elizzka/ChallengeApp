@@ -2,7 +2,7 @@
 var age = 27;
 var name = "Ewa";
 
-if (isWomen == true)
+if (isWomen)
 {
     if (age < 30)
 
@@ -15,7 +15,7 @@ if (isWomen == true)
         Console.WriteLine("Ewa, lat 33");
     }
 }
-else if (isWomen == false)
+else 
 {
     if (age > 18)
     {
