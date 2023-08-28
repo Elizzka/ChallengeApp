@@ -5,9 +5,9 @@ Employee employee2 = new Employee("Natalia", "Konieczna", 34);
 Employee employee3 = new Employee("Paulina", "Kowalska", 42);
 
 employee1.AddScore(6);
-employee1.AddScore(7);
+employee1.AddScore(-7);
 employee1.AddScore(6);
-employee1.AddScore(9);
+employee1.AddScore(-9);
 employee1.AddScore(2);
 
 employee2.AddScore(7);
