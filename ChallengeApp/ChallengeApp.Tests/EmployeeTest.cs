@@ -6,12 +6,12 @@ namespace ChallengeApp.Tests
         public void WhenEmployeeCollectTwoPositiveScores_ShouldCorrectResult()
         {
             //arrange
-            var employee1 = new Employee("Kuba", "Majewski", 25);
-            employee1.AddScore(6);
-            employee1.AddScore(7);
+            var employee = new Employee("Kuba", "Majewski", 25);
+            employee.AddScore(6);
+            employee.AddScore(7);
 
             //act
-            var result = employee1.Result;
+            var result = employee.Result;
 
             //assert
             Assert.AreEqual(13, result);
@@ -22,12 +22,12 @@ namespace ChallengeApp.Tests
         public void WhenEmployeeCollectTwoNegativeScores_ShouldCorrectResult()
         {
             //arrange
-            var employee2 = new Employee("Natalia", "Konieczna", 34);
-            employee2.AddScore(-3);
-            employee2.AddScore(-7);
+            var employee = new Employee("Natalia", "Konieczna", 34);
+            employee.AddScore(-3);
+            employee.AddScore(-7);
 
             //act
-            var result = employee2.Result;
+            var result = employee.Result;
 
             //assert
             Assert.AreEqual(-10, result);
@@ -38,12 +38,12 @@ namespace ChallengeApp.Tests
         public void WhenEmployeeCollectNegativeScoreAndPositiveScore_ShouldCorrectResult()
         {
             //arrange
-            var employee3 = new Employee("Paulina", "Kowalska", 42);
-            employee3.AddScore(-3);
-            employee3.AddScore(3);
+            var employee = new Employee("Paulina", "Kowalska", 42);
+            employee.AddScore(-3);
+            employee.AddScore(3);
 
             //act
-            var result = employee3.Result;
+            var result = employee.Result;
 
             //assert
             Assert.AreEqual(0, result);
