@@ -3,50 +3,56 @@ namespace ChallengeApp.Tests
     public class EmployeeTests
     {
         [Test]
-        public void WhenEmployeeCollectTwoPositiveScores_ShouldCorrectResult()
+        public void WhenGetStatisticsShouldReturnMinGrade()
         {
             //arrange
-            var employee = new Employee("Kuba", "Majewski", 25);
-            employee.AddScore(6);
-            employee.AddScore(7);
+            var employee = new Employee("Maja", "Wiœniewska");
+            employee.AddGrade(1);
+            employee.AddGrade(6);
+            employee.AddGrade(2);
+            employee.AddGrade(4);
 
             //act
-            var result = employee.Result;
+            var statistics = employee.GetStatistics();
 
             //assert
-            Assert.AreEqual(13, result);
+            Assert.AreEqual(1, statistics.Min);
 
         }
 
         [Test]
-        public void WhenEmployeeCollectTwoNegativeScores_ShouldCorrectResult()
+        public void WhenGetStatisticsShouldReturnMaxGrade()
         {
             //arrange
-            var employee = new Employee("Natalia", "Konieczna", 34);
-            employee.AddScore(-3);
-            employee.AddScore(-7);
+            var employee = new Employee("Maja", "Wiœniewska");
+            employee.AddGrade(2);
+            employee.AddGrade(3);
+            employee.AddGrade(4);
+            employee.AddGrade(6);
 
             //act
-            var result = employee.Result;
+            var statistics = employee.GetStatistics();
 
             //assert
-            Assert.AreEqual(-10, result);
+            Assert.AreEqual(6, statistics.Max);
 
         }
 
         [Test]
-        public void WhenEmployeeCollectNegativeScoreAndPositiveScore_ShouldCorrectResult()
+        public void WhenGetStatisticsShouldReturnAverageGrade()
         {
             //arrange
-            var employee = new Employee("Paulina", "Kowalska", 42);
-            employee.AddScore(-3);
-            employee.AddScore(3);
+            var employee = new Employee("Maja", "Wiœniewska");
+            employee.AddGrade(5);
+            employee.AddGrade(2);
+            employee.AddGrade(6);
+            employee.AddGrade(7);
 
             //act
-            var result = employee.Result;
+            var statistics = employee.GetStatistics();
 
             //assert
-            Assert.AreEqual(0, result);
+            Assert.AreEqual(5, statistics.Average);
 
         }
     }
