@@ -55,5 +55,39 @@ namespace ChallengeApp.Tests
             Assert.AreEqual(5, statistics.Average);
 
         }
+
+        [Test]
+        public void WhenGetStatisticsShouldReturnAverageLetter()
+        {
+            //arrange
+            var employee = new Employee();
+            employee.AddGrade(80);
+            employee.AddGrade(50);
+            employee.AddGrade(30);
+            employee.AddGrade(40);
+
+            //act
+            var statistics = employee.GetStatistics();
+
+            //assert
+            Assert.AreEqual('C', statistics.AverageLetter);
+
+        }
+
+        [Test]
+        public void WhenGetStatisticsShouldReturnAverageLetter2()
+        {
+            //arrange
+            var employee = new Employee();
+            employee.AddGrade('A');
+            employee.AddGrade('E');
+
+            //act
+            var statistics = employee.GetStatistics();
+
+            //assert
+            Assert.AreEqual('B', statistics.AverageLetter); 
+            
+        }
     }
 }
