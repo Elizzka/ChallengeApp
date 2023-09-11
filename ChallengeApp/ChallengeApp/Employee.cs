@@ -1,4 +1,6 @@
-﻿namespace ChallengeApp
+﻿using System.Runtime.InteropServices;
+
+namespace ChallengeApp
 {
     public class Employee
     {
@@ -27,19 +29,19 @@
             }
             else
             {
-                Console.WriteLine("invalid grade value");
+                throw new Exception("invalid grade value");
             }
         }
 
         public void AddGrade(string grade)
         {
-           if( float.TryParse(grade, out float result))
+            if (float.TryParse(grade, out float result))
             {
                 this.AddGrade(result);
             }
             else
             {
-                Console.WriteLine("String is not float");
+                throw new Exception("String is not float");
             }
         }
 
@@ -63,8 +65,7 @@
                     this.grades.Add(20);
                     break;
                 default:
-                    Console.WriteLine("Wrong letter");
-                    break;
+                    throw new Exception("Wrong letter");
             }
         }
 
