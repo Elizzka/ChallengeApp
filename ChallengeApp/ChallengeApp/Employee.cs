@@ -1,25 +1,30 @@
-﻿using System.Runtime.InteropServices;
-
-namespace ChallengeApp
+﻿namespace ChallengeApp
 {
-    public class Employee
+    public class Employee : Person
     {
         private List<float> grades = new List<float>();
+        private readonly char sex = 'K';
 
         public Employee()
+           : this("no name", "no surname", '-')
         {
-        }
 
+        }
+        public Employee(string name)
+           : base(name)
+        {
+
+        }
         public Employee(string name, string surname)
+           : base(name, surname)
         {
-            this.Name = name;
-            this.Surname = surname;
+
         }
+        public Employee(string name, string surname, char sex)
+            : base(name, surname, sex)
+        {
 
-        public string Name { get; private set; }
-
-        public string Surname { get; private set; } 
-
+        }
         public void AddGrade(float grade)
         {
 
